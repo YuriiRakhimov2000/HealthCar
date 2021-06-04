@@ -1,0 +1,8 @@
+
+type Profile @model {
+  id: ID!
+  make: String!
+  model: String
+  year: String
+  sub: String!
+}

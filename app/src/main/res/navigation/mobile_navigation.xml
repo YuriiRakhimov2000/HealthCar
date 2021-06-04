@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.yura.newaws.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"
+        app:startDestination="@id/action_nav_home_to_troubleCodeFragment">
+        <action
+            android:id="@+id/action_nav_home_to_realTimeDataFragment"
+            app:destination="@id/realTimeDataFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_allDataFragment"
+            app:destination="@id/allDataFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_troubleCodeFragment"
+            app:destination="@id/troubleCodeFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_profileFragmentList"
+            app:destination="@id/profileFragmentList" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/profileFragmentList"
+        android:name="com.yura.newaws.ui.profile.ProfileFragmentList"
+        android:label="Профілі"
+        tools:layout="@layout/fragment_profile_list_list" >
+        <action
+            android:id="@+id/action_profileFragmentList_to_addProfile"
+            app:destination="@id/addProfile" />
+        <action
+            android:id="@+id/action_profileFragmentList_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProfile"
+        android:name="com.yura.newaws.ui.profile.AddProfile"
+        android:label="Добавити профіль"
+        tools:layout="@layout/fragment_add_profile" >
+        <argument
+            android:name="profile_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.yura.newaws.ui.profile.DetailsFragment"
+        android:label="Профіль"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/realTimeDataFragment"
+        android:name="com.yura.newaws.ui.realtimeData.RealTimeDataFragment"
+        android:label="Поточні дані"
+        tools:layout="@layout/real_time_data_fragment" />
+    <fragment
+        android:id="@+id/allDataFragment"
+        android:name="com.yura.newaws.ui.allData.AllDataFragment"
+        android:label="Датчики"
+        tools:layout="@layout/fragment_all_data" />
+    <fragment
+        android:id="@+id/troubleCodeFragment"
+        android:name="com.yura.newaws.ui.troubleCodes.TroubleCodeFragment"
+        android:label="Коди несправностей"
+        tools:layout="@layout/fragment_trouble_list" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.yura.newaws.ui.realtimeData.SettingsFragment"
+        android:label="Налаштування" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.yura.newaws.ui.aboutUs.AboutUsFragment"
+        android:label="Контакти"
+        tools:layout="@layout/fragment_about_us" />
+
+
+
+</navigation>
